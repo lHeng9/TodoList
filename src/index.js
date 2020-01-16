@@ -24,7 +24,7 @@ function App() {
   }
   function addClick() {
 
-    if (inputValue != '') {
+    if (inputValue !== '') {
       setList([...list, { text: inputValue, finished: false }])
       setInputValue('')
     }
