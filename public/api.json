@@ -1,0 +1,21 @@
+{
+  "inputValue": "不知道写啥？",
+  "list": [
+    {
+      "text": "完成demo",
+      "finished": false
+    },
+    {
+      "text": "完成添加功能",
+      "finished": false
+    },
+    {
+      "text": "点击完成，代表目标达成",
+      "finished": false
+    },
+    {
+      "text": "点击已完成，代表目标进入未完成状态",
+      "finished": false
+    }
+  ]
+}
