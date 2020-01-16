@@ -13,7 +13,6 @@ function App() {
   useEffect(() => {
     Axios.get('./api.json')
       .then((res) => {
-        console.log(res.data)
         setInputValue(res.data.inputValue)
         setList(res.data.list)
       })
@@ -31,7 +30,6 @@ function App() {
   }
   function handleClick(index) {
 
-    console.log(index)
     let newList = [...list]
     newList[index].finished = !list[index].finished
     setList(newList)
