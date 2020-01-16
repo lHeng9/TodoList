@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Button, List } from 'antd'
+import { Input, Button } from 'antd'
 
 function InputCom(props) {
   const { inputValue, inputChange, inputEl, addClick } = props

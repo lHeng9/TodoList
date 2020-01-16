@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom'
 import 'antd/dist/antd.css'
-import { Input, Button, List } from 'antd'
 import './index.css'
 import Axios from 'axios'
 import InputCom from './component/InputCom'
+import ListCom from './component/ListCom'
 function App() {
   const [list, setList] = useState()
   const [inputValue, setInputValue] = useState()
@@ -29,7 +29,6 @@ function App() {
     }
   }
   function handleClick(index) {
-
     let newList = [...list]
     newList[index].finished = !list[index].finished
     setList(newList)
@@ -42,25 +41,9 @@ function App() {
         inputEl={inputEl}
         addClick={addClick}
       />
-      <List
-        className='list'
-        style={{ width: '350px' }}
-        dataSource={list}
-        bordered
-        renderItem={(item, index) => (
-          <List.Item
-            className={`listItem ${item.finished ? 'finished' : 'unfinished'}`}
-            key={index}
-          >
-            <div>{item.text}</div>
-            <div
-              onClick={() => {
-                handleClick(index)
-              }}
-              className='btn'
-            >{item.finished ? '已完成' : '完成'}</div>
-          </List.Item>
-        )}
+      <ListCom
+        list={list}
+        handleClick={handleClick}
       />
     </>
   )
