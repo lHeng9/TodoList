@@ -2,21 +2,22 @@ import React from 'react';
 import { Input, Button, List } from 'antd'
 
 function InputCom(props) {
+  const { inputValue, inputChange, inputEl, addClick } = props
   return (
     <>
       <Input
         type="text"
-        value={props.inputValue}
+        value={inputValue}
         onChange={() => {
-          props.inputChange()
+          inputChange()
         }}
-        ref={props.inputEl}
+        ref={inputEl}
         style={{ 'width': '300px', marginRight: '5px' }}
       />
       <Button
         type='primary'
         onClick={() => {
-          props.addClick()
+          addClick()
         }}
       >
         添加
