@@ -4,7 +4,7 @@ import 'antd/dist/antd.css'
 import { Input, Button, List } from 'antd'
 import './index.css'
 import Axios from 'axios'
-
+import InputCom from './component/InputCom'
 function App() {
   const [list, setList] = useState()
   const [inputValue, setInputValue] = useState()
@@ -36,23 +36,12 @@ function App() {
   }
   return (
     <>
-      <Input
-        type="text"
-        value={inputValue}
-        onChange={() => {
-          inputChange()
-        }}
-        ref={inputEl}
-        style={{ 'width': '300px', marginRight: '5px' }}
+      <InputCom
+        inputValue={inputValue}
+        inputChange={inputChange}
+        inputEl={inputEl}
+        addClick={addClick}
       />
-      <Button
-        type='primary'
-        onClick={() => {
-          addClick()
-        }}
-      >
-        添加
-      </Button>
       <List
         className='list'
         style={{ width: '350px' }}
