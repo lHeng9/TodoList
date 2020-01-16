@@ -20,7 +20,7 @@ function App() {
   }, [])
 
   function inputChange() {
-    setInputValue(inputEl.current.value)
+    setInputValue(inputEl.current.input.value)
   }
   function addClick() {
 
