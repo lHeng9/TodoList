@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { List } from 'antd'
+import { ListContext } from '../context/TodoList'
 
 
-function ListCom(props) {
-  const { list, handleClick } = props
+function MyList(props) {
+  const { data, dispatch } = useContext(ListContext)
+  const { list } = data
+
+  function onHandleClick(index) {
+    dispatch({ type: 'itemClick', value: index })
+  }
   return (
     <List
       className='list'
-      style={{ width: '350px' }}
       dataSource={list}
       bordered
       renderItem={(item, index) => (
@@ -18,7 +23,7 @@ function ListCom(props) {
           <div>{item.text}</div>
           <div
             onClick={() => {
-              handleClick(index)
+              onHandleClick(index)
             }}
             className='btn'
           >{item.finished ? '已完成' : '完成'}</div>
@@ -28,4 +33,4 @@ function ListCom(props) {
   )
 }
 
-export default ListCom
+export default MyList
